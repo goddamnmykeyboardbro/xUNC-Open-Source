@@ -1,8 +1,8 @@
-local xUNC = {}
+local Yours = {}
  
-xUNC.version = "1.0.0"
+Yours.version = "1.0.0"
  
-xUNC.functions = {
+Yours.functions = {
  
     {name = "getgenv", category = "memory", weight = 1.5},
     {name = "getrenv", category = "memory", weight = 1.2},
@@ -35,7 +35,7 @@ xUNC.functions = {
     {name = "getcallbackvalue", category = "connections", weight = 1.5}
 }
  
-xUNC.securityFunctions = {
+Yours.securityFunctions = {
  
     {name = "getexecutorname", category = "system", weight = 0.8},
     {name = "isrbxactive", category = "system", weight = 1.0},
@@ -65,7 +65,7 @@ xUNC.securityFunctions = {
     {name = "fireclickdetector", category = "game", weight = 1.3}
 }
  
-xUNC.fileSystemFunctions = {
+Yours.fileSystemFunctions = {
     {name = "readfile", category = "filesystem", weight = 1.5},
     {name = "writefile", category = "filesystem", weight = 1.5},
     {name = "appendfile", category = "filesystem", weight = 1.3},
@@ -78,7 +78,7 @@ xUNC.fileSystemFunctions = {
     {name = "delfile", category = "filesystem", weight = 1.3}
 }
  
-xUNC.debugFunctions = {
+Yours.debugFunctions = {
     {name = "getupvalue", category = "debug", weight = 1.6},
     {name = "setupvalue", category = "debug", weight = 1.6},
     {name = "getupvalues", category = "debug", weight = 1.4},
@@ -92,7 +92,7 @@ xUNC.debugFunctions = {
     {name = "traceback", category = "debug", weight = 1.2}
 }
  
-xUNC.dllHints = {
+Yours.dllHints = {
     "synapse", "syn", "synx",
     "krnl", "kernel",
     "fluxus", "flux",
@@ -125,7 +125,7 @@ xUNC.dllHints = {
     "coco"
 }
  
-xUNC.executorBenchmarks = {
+Yours.executorBenchmarks = {
     ["🧸 Synapse X"] = {score = 98.5, tier = "S+"},
     ["🧸 Script-Ware"] = {score = 97.0, tier = "S+"},
     ["🧸 KRNL"] = {score = 92.5, tier = "S"},
@@ -142,7 +142,7 @@ xUNC.executorBenchmarks = {
     ["🧸 Generic"] = {score = 42.0, tier = "F"}
 }
  
-function xUNC:checkFunctionSet(functionSet, setName)
+function Yours:checkFunctionSet(functionSet, setName)
     print(("\n🔍 Checking %s..."):format(setName))
     local passed = 0
     local totalWeight = 0
@@ -226,7 +226,7 @@ function xUNC:checkFunctionSet(functionSet, setName)
     }
 end
  
-function xUNC:detectEnvironment()
+function Yours:detectEnvironment()
     print("\n🔍 Detecting environment features...")
     local features = {}
  
@@ -300,7 +300,7 @@ function xUNC:detectEnvironment()
     return features
 end
  
-function xUNC:estimateDLL()
+function Yours:estimateDLL()
     print("\n✅ Estimating DLL/executor type...")
  
     local result = {
@@ -394,7 +394,7 @@ function xUNC:estimateDLL()
     return result
 end
  
-function xUNC:rateLevel(coreResults, securityResults, fsResults, debugResults, envFeatures)
+function Yours:rateLevel(coreResults, securityResults, fsResults, debugResults, envFeatures)
     print("\n🔍 Calculating comprehensive level rating...")
  
     local categoryWeights = {
@@ -505,7 +505,7 @@ function xUNC:rateLevel(coreResults, securityResults, fsResults, debugResults, e
     }
 end
  
-function xUNC:compareExecutors(score, dllInfo)
+function Yours:compareExecutors(score, dllInfo)
     print("\n🔍 Comparing to known executors...")
  
     local comparisons = {}
@@ -565,7 +565,7 @@ function xUNC:compareExecutors(score, dllInfo)
     }
 end
  
-function xUNC:generateFingerprint(coreResults, securityResults, fsResults, debugResults, envFeatures)
+function Yours:generateFingerprint(coreResults, securityResults, fsResults, debugResults, envFeatures)
     print("\n🔍 Generating executor fingerprint...")
  
     local fingerprint = {}
@@ -642,8 +642,8 @@ function xUNC:generateFingerprint(coreResults, securityResults, fsResults, debug
     return fingerprint
 end
  
-function xUNC:run()
-    print("\n🌟 xUNC :: Advanced Unified Naming Convention Test v" .. self.version .. " 🌟")
+function Yours:run()
+    print("\n🌟 Yours :: Advanced Unified Naming Convention Test v" .. self.version .. " 🌟")
     print("⏱️ Test started at: " .. os.date("%Y-%m-%d %H:%M:%S"))
     print("📡 Initializing comprehensive executor assessment...")
     wait(0.5)
@@ -677,7 +677,7 @@ function xUNC:run()
     print("\n📊 FINAL RESULTS SUMMARY 📊")
     print("→ 🧷 Executor name: " .. (envFeatures.executorName or "Unknown"))
     print("→ ☁️ DLL identification: " .. dllInfo.name .. ".dll", " (confidence: " .. math.floor(dllInfo.confidence * 100) .. "%)")
-    print("→ ❕ Final score: " .. string.format("%.2f", rating.score) .. " / 100 xUNC")
+    print("→ ❕ Final score: " .. string.format("%.2f", rating.score) .. " / 100 Yours")
     print("→ 🎭 Performance tier: " .. rating.level .. " (" .. rating.tierName .. ")")
     print("→ #️⃣ Fingerprint hash: " .. fingerprint.hash)
     print("\n🔄 Test completed at: " .. os.date("%Y-%m-%d %H:%M:%S"))
@@ -700,4 +700,4 @@ function xUNC:run()
     }
 end
  
-return xUNC:run()
+return Yours:run()
